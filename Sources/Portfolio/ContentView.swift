@@ -130,25 +130,60 @@ struct WorksItemView: View {
     }
 }
 
+struct DisclosureWorksItemView: View {
+    var bibTeX: BibTeX
+    
+    var body: some View {
+        DisclosureGroup(bibTeX.plain()) {
+            Text(bibTeX.cite())
+                .foregroundColor(.secondary)
+        }
+    }
+}
+
 struct WorksView: View {
     var body: some View {
         VStack(alignment: .leading) {
             VStack(alignment: .leading) {
                 Text("Journal")
                     .font(.title2)
-                WorksItemView(citation: "S. Kobayashi and T. Hasegawa. Detection of Motion on a Trampoline with a Smartwatch. \nSensors, Vol. 21, Issue 24, ID. 8413, pp. 1-14, 2021.",
-                              workType: .journal)
-                WorksItemView(citation: "S. Kobayashi and T. Hasegawa. Smartphone-based Estimation of Sidewalk Surface Type \nvia Deep Learning. Sensors and Materials, Vol.33, No.1, pp.35-51, 2021.", workType: .journal)
+                DisclosureWorksItemView(bibTeX: BibTeX(forArticle: "sksensors2021",
+                                                       author: ["S. Kobayashi", "T. Hasegawa"],
+                                                       title: " Detection of Motion on a Trampoline with a Smartwatch",
+                                                       journal: "Sensors", volume: 24, number: nil, pages: nil, year: 2021,
+                                                       doi: "https://doi.org/10.3390/s21248413"))
+                
+                DisclosureWorksItemView(bibTeX: BibTeX(forArticle: "sksm2021",
+                                                       author: ["S. Kobayashi", "T. Hasegawa"],
+                                                       title: "Smartphone-based Estimation of Sidewalk Surface Type via Deep Learning",
+                                                       journal: "Sensors and Materials", volume: 33, number: 1, pages: 35...51, year: 2019,
+                                                       doi: "https://doi.org/10.18494/SAM.2021.2976"))
             }
             .padding(.vertical, 10)
             
             VStack(alignment: .leading) {
                 Text("Conference")
                     .font(.title2)
-                WorksItemView(citation: "小林慧, 長谷川達人. スマートウォッチを用いたトランポリン上の動作検出. マルチメディア，分散，\n協調とモバイルシンポジウム 2021 論文集, pp.1310-1317, 2021.", workType: .japanConference)
-                WorksItemView(citation: "小林慧, 長谷川達人. 深層学習を用いたスマートフォンセンシングによる歩行時の路面種別推定. \nマルチメディア，分散，協調とモバイルシンポジウム 2020 論文集, pp. 206-212, 2020.", workType: .japanConference)
-                WorksItemView(citation: "S. Kobayashi, R. Katsurada, and T. Hasegawa. Estimation of Sidewalk Surface Type with a Smartphone. \nIn Proceedings of the 7th International Conference on Information Technology: IoT and Smart City, \npp. 497–502. ACM, 2019.", workType: .internationalConference)
-                WorksItemView(citation: "小林慧, 桂田連, 長谷川達人. スマートフォンの加速度センサを用いた歩行時の道路の種類推定.\n 2019年度電気・情報関係学会北陸支部連合大会, 2019.", workType: .japanConference)
+                DisclosureWorksItemView(bibTeX: BibTeX(forProceeding: "skdicomo2021",
+                                                       author: ["小林慧", "長谷川達人"],
+                                                       title: "スマートウォッチを用いたトランポリン上の動作検出",
+                                                       bookTitle: "マルチメディア，分散，協調とモバイルシンポジウム 2021 論文集",
+                                                       pages: 1310...1317, year: 2021, doi: nil))
+                DisclosureWorksItemView(bibTeX: BibTeX(forProceeding: "skdicomo2020",
+                                                       author: ["小林慧", "長谷川達人"],
+                                                       title: "深層学習を用いたスマートフォンセンシングによる歩行時の路面種別推定",
+                                                       bookTitle: "マルチメディア，分散，協調とモバイルシンポジウム 2020 論文集",
+                                                       pages: 206...212, year: 2020, doi: nil))
+                DisclosureWorksItemView(bibTeX: BibTeX(forProceeding: "skicit2019",
+                                                       author: ["S. Kobayashi", "R. Katsurada", "T. Hasegawa"],
+                                                       title: "Estimation of Sidewalk Surface Type with a Smartphone",
+                                                       bookTitle: "Proceedings of the 7th International Conference on Information Technology: IoT and Smart City",
+                                                       pages: 497...502, year: 2019, doi: "https://doi.org/10.1145/3377170.3377263"))
+                DisclosureWorksItemView(bibTeX: BibTeX(forProceeding: "skjhes2019",
+                                                       author: ["小林慧", "桂田連", "長谷川達人"],
+                                                       title: "スマートフォンの加速度センサを用いた歩行時の道路の種類推定",
+                                                       bookTitle: "2019年度電気・情報関係学会北陸支部連合大会",
+                                                       pages: nil, year: 2019, doi: nil))
             }
             .padding(.vertical, 10)
             
