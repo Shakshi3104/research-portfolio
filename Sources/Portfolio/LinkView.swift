@@ -1,4 +1,5 @@
 import TokamakDOM
+import Foundation
 
 // MARK: - Link View
 

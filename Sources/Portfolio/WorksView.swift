@@ -1,4 +1,5 @@
 import TokamakDOM
+import Foundation
 
 // MARK: - Works View
 enum WorkType: String {

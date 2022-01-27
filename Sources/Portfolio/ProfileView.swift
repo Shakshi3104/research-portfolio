@@ -1,4 +1,5 @@
 import TokamakDOM
+import Foundation
 
 // MARK: - Profile View
 struct ProfileItemView: View {
