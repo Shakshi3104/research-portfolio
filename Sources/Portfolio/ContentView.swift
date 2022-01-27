@@ -6,14 +6,11 @@ struct ContentView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack() {
-                RoundedRectangle(cornerRadius: 12)
+                Rectangle()
                     .overlay(LinearGradient(colors: [.lightPurple, .lightBlue],
                                             startPoint: .topLeading,
                                             endPoint: .bottomTrailing))
-                    .frame(minWidth: 200,
-                           idealWidth: 300,
-                           maxWidth: 300,
-                           minHeight: 100,
+                    .frame(minHeight: 100,
                            idealHeight: 200,
                            maxHeight: 200,
                            alignment: .center)

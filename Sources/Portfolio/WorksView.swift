@@ -54,6 +54,7 @@ struct CitationWorksItemView: View {
                     Text(bibTeX.cite())
                         .foregroundColor(.secondary)
                         .font(.footnote)
+                        .padding(.vertical, 10)
                 } label: {
                     Text("BibTeX")
                         .font(.caption)
