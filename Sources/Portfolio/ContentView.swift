@@ -56,6 +56,6 @@ struct ContentView: View {
 extension Color {
     static let lightBlue = Color(.sRGB, red: 0.655, green: 0.925, blue: 0.949, opacity: 1.0)
     static let lightPurple = Color(.sRGB, red: 0.568, green: 0.663, blue: 0.871, opacity: 1.0)
-    static let tokamakOrange = Color(.sRGB, red: 0.776, green: 0.420, blue: 0.227, opacity: 1.0)
+    static let tokamakOrange = Color(.sRGB, red: 1.0, green: 0.689, blue: 0.414, opacity: 1.0)
     static let swiftWasmOrange = Color(.sRGB, red: 0.941, green: 0.318, blue: 0.220, opacity: 1.0)
 }
