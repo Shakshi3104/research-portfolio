@@ -33,15 +33,21 @@ struct ContentView: View {
                 
                 HStack(spacing: 5) {
                     Text("Powered by")
-                        .foregroundColor(.secondary)
-                        .font(.caption)
+                        
                     Link(destination: URL(string: "https://github.com/TokamakUI/Tokamak")!) {
                         Text("Tokamak")
-                            .foregroundColor(.secondary)
-                            .font(.caption)
+                            .foregroundColor(.tokamakOrange)
+                    }
+                    Text("and")
+                    Link(destination: URL(string: "https://github.com/swiftwasm")!) {
+                        Text("SwiftWasm")
+                            .foregroundColor(.swiftWasmOrange)
                     }
                 }
+                .font(.caption)
+                .foregroundColor(.secondary)
                 .padding(.vertical, 10)
+                
             }
             .padding(20)
         }
@@ -53,4 +59,6 @@ struct ContentView: View {
 extension Color {
     static let lightBlue = Color(.sRGB, red: 0.655, green: 0.925, blue: 0.949, opacity: 1.0)
     static let lightPurple = Color(.sRGB, red: 0.568, green: 0.663, blue: 0.871, opacity: 1.0)
+    static let tokamakOrange = Color(.sRGB, red: 0.776, green: 0.420, blue: 0.227, opacity: 1.0)
+    static let swiftWasmOrange = Color(.sRGB, red: 0.941, green: 0.318, blue: 0.220, opacity: 1.0)
 }
