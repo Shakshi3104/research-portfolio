@@ -1,10 +1,3 @@
-//
-//  File.swift
-//  
-//
-//  Created by MacBook Pro M1 on 2022/01/26.
-//
-
 import Foundation
 
 struct BibTeX {
@@ -81,11 +74,7 @@ struct BibTeX {
             doi == nil ? "" : "doi={\(doi!)}"
         ]
         
-        return "\(type.rawValue){\(id),\n\(text.filter { $0 != "" }.joined(separator: ",\n"))\n\(unifiedText.filter { $0 != "" }.joined(separator: ",\n"))\n}"
-    }
-    
-    func plain() -> String {
-        return "\(title)"
+        return "\(type.rawValue){\(id),\n\(text.filter { $0 != "" }.joined(separator: ",\n")),\n\(unifiedText.filter { $0 != "" }.joined(separator: ",\n")),\n}"
     }
 }
 
