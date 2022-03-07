@@ -66,12 +66,19 @@ struct CitationWorksItemView: View {
     }
 }
 
+// MARK: -  Works View
 struct WorksView: View {
     var body: some View {
         VStack(alignment: .leading) {
             VStack(alignment: .leading) {
                 Text("Journal")
                     .font(.title2)
+                CitationWorksItemView(bibTeX: BibTeX(forArticle: "projectxieee2022",
+                                                     author: ["Z. Zhongkai", "S. Kobayashi", "K. Kondo", "T. Hasegawa", "M. Koshino"],
+                                                     title: "A Comparative Study: Toward an Effective Convolutional Neural Network Architecture for Sensor-Based Human Activity Recognition",
+                                                     journal: "IEEE Access", volume: 10, number: nil, pages: 20457...20558, year: 2022,
+                                                     doi: "https://doi.org/10.1109/ACCESS.2022.3152530"))
+                
                 CitationWorksItemView(bibTeX: BibTeX(forArticle: "sksensors2021",
                                                      author: ["S. Kobayashi", "T. Hasegawa"],
                                                      title: " Detection of Motion on a Trampoline with a Smartwatch",
@@ -89,6 +96,12 @@ struct WorksView: View {
             VStack(alignment: .leading) {
                 Text("Conference")
                     .font(.title2)
+                CitationWorksItemView(bibTeX: BibTeX(forProceeding: "skipsj84",
+                                                     author: ["小林慧", "長谷川達人"],
+                                                     title: "Mobile-aware Convolutional Neural Network for Sensor-based Human Activity Recognition",
+                                                     bookTitle: "情報処理学会 第84回全国大会",
+                                                     pages: nil, year: 2022, doi: nil))
+                
                 CitationWorksItemView(bibTeX: BibTeX(forProceeding: "skdicomo2021",
                                                      author: ["小林慧", "長谷川達人"],
                                                      title: "スマートウォッチを用いたトランポリン上の動作検出",
