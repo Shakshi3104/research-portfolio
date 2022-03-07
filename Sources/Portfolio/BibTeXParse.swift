@@ -68,6 +68,7 @@ struct BibTeX {
         }
         
         let unifiedText = [
+            "title={{\(title)}}",
             "author={\(author.joined(separator: " and "))}",
             pages == nil ? "" : "pages={\(pages!.lowerBound) -- \(pages!.upperBound)}",
             "year={\(year)}",
