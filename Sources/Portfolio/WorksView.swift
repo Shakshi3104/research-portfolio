@@ -73,6 +73,10 @@ struct WorksView: View {
             VStack(alignment: .leading) {
                 Text("Journal")
                     .font(.title2)
+                CitationWorksItemView(bibTeX: BibTeX(forArticle: "marnasnet2023",
+                                                     author: ["S. Kobayashi", "T. Hasegawa", "T. Miyoshi", "M. Koshino"],
+                                                     title: "MarNASNets: Toward CNN Model Architectures Specific to Sensor-Based Human Activity Recognition",
+                                                     journal: "IEEE Sensors Journal", volume: 23, number: 16, pages: 18708...18717, year: 2023))
                 CitationWorksItemView(bibTeX: BibTeX(forArticle: "projectxieee2022",
                                                      author: ["Z. Zhongkai", "S. Kobayashi", "K. Kondo", "T. Hasegawa", "M. Koshino"],
                                                      title: "A Comparative Study: Toward an Effective Convolutional Neural Network Architecture for Sensor-Based Human Activity Recognition",
